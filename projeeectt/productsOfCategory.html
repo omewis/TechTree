@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id"
+        content="763173387217-lv83ao8bnjcorooamgv3enh452o3tab9.apps.googleusercontent.com">
+    <title> All Products | Fresh Mart</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/loogo.png">
+    <link rel="stylesheet" href="./assets/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./assets/fontawesome-free-6.1.1/fontawesome-free-6.1.1-web/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/modal.css">
+    <link rel="stylesheet" href="./assets/css/products.css">
+    <link rel="stylesheet" href="./assets/css/rpsproducts.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+    <style>
+  
+.checkbox-wrapper {
+    margin-bottom: 10px;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.checkbox-wrapper label {
+    font-size: 16px;
+}
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- slider -->
+    <div id="slider">
+        <div id="drop-of-water">
+            <img src="./assets/images/bg-after-header.webp" alt="">
+        </div>
+        <div class="slider-title">Labtop category</div>
+        <div class="slider-nav">
+            <a href="./index.html" class="nav-item">Home</a><i>/</i>
+            <b class="nav-item">Labtops</b>
+        </div>
+    </div>
+
+ 
+    <!-- CONTENT -->
+    <div id="content">
+        <div class="content-about width_86 width_94 m-lr-auto">
+            <div class="sidebar">
+                <!-- Product Category -->
+                <div class="sidebar-item">
+                    <div class="sidebar-title">PRODUCT CATEGORIES</div>
+                    <div class="sidebar-content">
+                        <div id="categoriesContainer" class="sidebar-content-list">
+                            <!-- Checkboxes will be populated here -->
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <!--price Filter -->
+                <div class="sidebar-item">
+                    <div class="sidebar-title">FILTER PRODUCTS</div>
+                    <div class="sidebar-content">
+                        <b>Product Price</b>
+                        <ul class="sidebar-content-list">
+                            <li class="item-name">
+                                <input type="checkbox" id="price-1-10000" />
+                                <label for="price-1-10000">lower than 10,000$</label>
+                            </li>
+                            <li class="item-name">
+                                <input type="checkbox" id="price-10000-15000"/>
+                                <label for="price-10000-15000">10,000$ - 15,000$</label>
+                            </li>
+                            <li class="item-name">
+                                <input type="checkbox" id="price-15000-20000"/>
+                                <label for="price-15000-20000">15,000$ - 20,000$</label>
+                            </li>
+                            <li class="item-name">
+                                <input type="checkbox" id="price-20000-50000"/>
+                                <label for="price-20000-50000">20,000$ - 50,000$</label>
+                            </li>
+                            <li class="item-name">
+                                <input type="checkbox" id="price-50000-150000"/>
+                                <label for="price-50000-150000">50,000$ - 150,000$</label>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+
+            </div>
+            <div class="section-about">
+                <div class="sort-products">
+                    <div class="sort-product-item sort-product">
+                        <i class="fa-solid fa-arrow-down-z-a"></i>
+                        <p>Sort by</p>
+                    </div>
+                    <div class="sort-product-item">
+                        <input type="radio" name="sort-products">
+                        <p>Name A-Z</p>
+                    </div>
+                    <div class="sort-product-item">
+                        <input type="radio" name="sort-products">
+                        <p>Name Z-A</p>
+                    </div>
+                    <div class="sort-product-item">
+                        <input type="radio" name="sort-products">
+                        <p>Price low to high</p>
+                    </div>
+                    <div class="sort-product-item">
+                        <input type="radio" name="sort-products">
+                        <p>Price high to low</p>
+                    </div>
+                </div>
+                <!--main section -->
+                <div class="container w-100 d-flex justify-content-center">
+                    <div id="productsContainerTwo" class="row"></div>
+                </div>
+                
+                <!-- main section -->
+
+                
+            </div>
+        </div>
+
+            <script src="./assets/js/index.js"></script>
+            <script src="./assets/js/ProductFiltiration.js"></script>
+            <script src="./assets/js/addproducttocart.js"></script>
+            <script src="https://apis.google.com/js/platform.js" async defer></script>
+            <script src="./assets/js/ProductFiltiration.js"></script>
+
+<script>
+    // Retrieve products from local storage
+let productsContainer = JSON.parse(localStorage.getItem('myProducts')) || [];
+
+// Add event listeners to the checkboxes
+document.querySelectorAll('.sidebar-content-list input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', filterProducts);
+});
+
+// Function to get the category ID from the URL
+function getCategoryIdFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('id'); // Returns the category ID as a string
+}
+
+// Function to filter products based on selected price ranges and category
+function filterProducts() {
+    const selectedRanges = [];
+    const categoryId = getCategoryIdFromUrl(); // Get category ID from the URL
+
+    // Get all selected checkboxes for price ranges
+    document.querySelectorAll('.sidebar-content-list input[type="checkbox"]:checked').forEach(checkbox => {
+        selectedRanges.push(checkbox.id); // Assuming checkbox IDs are in the format 'range-min-max'
+    });
+
+    // Filter products based on selected price ranges and category
+    const filteredProducts = productsContainer.filter(product => {
+        // Check if the product's category matches the selected category ID
+        const isInCategory = !categoryId || product.category === categoryId;
+
+        // Check if the product's price is within any of the selected price ranges
+        const isInPriceRange = selectedRanges.length === 0 || selectedRanges.some(range => {
+            const [_, min, max] = range.split('-').map(Number); // Split the range and convert to numbers
+            return product.price >= min && product.price <= max;
+        });
+
+        return isInCategory && isInPriceRange;
+    });
+
+    displayFilteredProducts(filteredProducts);
+}
+
+// Function to display filtered products
+function displayFilteredProducts(products) {
+    const containerTwo = document.getElementById('productsContainerTwo');
+    containerTwo.innerHTML = '';
+
+    products.forEach(product => {
+        containerTwo.innerHTML += `
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="sectiontwo-item">
+                    <div class="item-sp item-sp--img">
+                       <a href="guava.html?id=${product.id}">
+                            <img src="${product.image}" alt="${product.name}" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="item-sp item-price">
+                            <a href="guava.html?id=${product.id}" class="item-sp--name">${product.name}</a>
+                         <div class="item-sp-price">
+                            <p class="item-sp--cost">${product.price}<a>$</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+    });
+}
+
+// Call this function to initially display products based on category and price filters when the page loads
+document.addEventListener('DOMContentLoaded', filterProducts);
+
+</script>
+
+</body>
+</html>

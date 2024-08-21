@@ -1,0 +1,138 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.sidebar-header {
+    font-size: 24px;
+    text-align:left;
+    margin-bottom: 40px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.sidebar-menu ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-menu ul li {
+    width: 100%;
+}
+
+.menu-item {
+    color: #adb5bd;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.menu-item:hover {
+    background-color: #495057;
+    color: #fff;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item::before {
+    content: "▶";
+    margin-right: 10px;
+    transition: margin-right 0.3s ease;
+}
+
+.menu-item:hover::before {
+    margin-right: 20px;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: padding-left 0.3s ease;
+}
+
+.content-header {
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 36px;
+    color: #40a46c;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Sidebar Transition */
+.sidebar:hover {
+    width: 270px;
+}
+
+.main-content:hover {
+    padding-left: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .sidebar-menu ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .menu-item {
+        padding: 10px;
+        flex: 1;
+        text-align: center;
+    }
+}

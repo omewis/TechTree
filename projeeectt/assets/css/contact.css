@@ -1,0 +1,544 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(../roboto/Roboto-Regular.ttf);
+}
+
+html {
+    font-family: 'Roboto', -apple-system, Arial, Helvetica, sans-serif;
+}
+
+.width_86 {
+    width: 1280px;
+}
+
+.m-lr-auto {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.ml--05 {
+    margin-left: -0.5px !important;
+}
+
+.mt50 {
+    margin-top: 50px; 
+}
+
+/* HEADER */
+#header { 
+    background-color: #3ba66b;
+    top: 0;
+    width: 100%;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 35px 0px; 
+}
+
+.nav-left #nav{
+    margin-right: auto; 
+}
+
+#nav .nav-item {
+    display: inline-block;
+}
+
+#nav .nav-item a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 0px 15px;
+    display: flex;
+    align-items: flex-end;
+}
+
+#nav .header-nav-home {
+    padding-left: 0px !important;
+    margin-left: 3px;
+}
+
+#nav .subnav {
+    position: absolute;
+    width: 200px;
+    z-index: 1;
+    background-color: #fff;
+    list-style: none;
+    box-shadow: 0px 9px 15px 10px rgb(0 0 0 / 5%);
+    animation: Grow ease-in 0.2s;
+    transform-origin: calc(100% - 170px) top;
+    display: none;
+}
+
+@keyframes Grow {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Khối mủi tên chỉ lên trên */
+#nav .subnav::before {
+    content: "";
+    border: 10px solid;
+    border-color: transparent transparent #fff transparent;
+    position: absolute;
+    left: 26.5px;
+    top: -20px;
+}
+
+
+#nav .subnav-item a {
+    color: #000;
+    display: block;
+    padding: 7px 10px;
+    border-bottom: solid 1px #e5e6ec;
+    color: #666;
+    font-size: 14px;
+}
+
+#nav .nav-item .nav-product {
+    padding: 13px 0px;
+}
+
+#nav .nav-item:hover .subnav {
+    display: block;
+}
+
+#nav .nav-arrow-icon {
+    margin-left: 5px;
+    font-size: 18px;
+    transition: all ease 0.4s;
+}
+
+#nav .nav-product:hover .nav-arrow-icon{
+    transform: rotate(180deg);
+}
+
+
+#nav .nav-item a:hover {
+    color: #ffb416;
+}
+
+.nav-between-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-right {
+    display: flex;
+}
+
+.nav-right .search {
+    position: relative;
+}
+
+.nav-right .search input {
+    border-radius: 50px;
+    padding: 15px 50px 15px 20px;
+    outline: none;
+    border: none; 
+}
+
+.nav-right .search a {
+    position: absolute;
+    right: 0;
+    background: #ffb416;
+    padding: 13px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+}
+
+.nav-right .search:hover a {
+    background-color: #2e8053;
+    cursor: pointer;
+}
+
+.nav-right-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    font-size: x-large;
+    margin-left: 10px;
+    margin-right: -10px;
+}
+
+.nav-right-list .list--item {
+    padding: 10px 12px;
+    position: relative;
+}
+
+.nav-right .ti-search,
+.nav-right-list a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.notification {
+    position: absolute;
+    background: #ffb416;
+    color: #fff;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 10px;
+    top: 0;
+    right: -10px;
+    text-align: center;
+}
+
+.signupsignin {
+    position: absolute;
+    right: 8px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0px 2px 6px 0px rgb(50 50 50 / 33%);
+    z-index: 2;
+    text-align: center;
+    margin-top: 7px;
+    display: none;
+}
+
+.signupsignin .btn {
+    color: #000;
+    font-size: 15px;
+    padding: 10px;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 125px;
+}
+
+.signupsignin .btn:hover {
+    color: #ffb416;
+}
+
+.signupsignin::after {
+    content: "";
+    position: absolute;
+    border: 10px solid;
+    border-color: transparent transparent #fff transparent;
+    top: -18px;
+    right: 3px;
+}
+
+.signupsignin::before {
+    content: "";
+    position: absolute;
+    border: 10px solid;
+    width: 100px;
+    background-color: transparent;
+    border-color: transparent;
+    top: -10px;
+    right: 0;
+}
+
+.signupsignin .signin {
+    border-bottom: 1px solid #ccc;
+}
+
+.user:hover .signupsignin {
+    display: block;
+}
+
+/* SLIDER */
+#slider {
+    height: 200px;
+    background-image: url(../images/headerb.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#drop-of-water {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#slider .slider-title {
+    font-weight: 700;
+    font-size: 26px; 
+}
+
+#slider .slider-nav {
+  margin-top: 18px;
+}
+
+.slider-nav .nav-item {
+    padding: 0 10px;
+}
+
+.slider-nav > a {
+    text-decoration: none;
+    color: #000;
+}
+
+.slider-nav > a:hover {
+    color: #ffb416;
+}
+
+/* CONTENT */
+#content {
+    font-size: 16px;
+}
+
+#content .content-about {
+    margin-top: 60px;
+}
+
+#content .content-map iframe {
+    height: 300px;
+    width: 100%;
+}
+
+#content .content-infoandform {
+    margin-top: 30px;
+    display: flex;
+}
+
+.content-contact--info {
+    width: 55%;
+    text-align: justify;
+    margin-right: 20px;
+}
+
+.content-contact--info p {
+    line-height: 1.6;
+    padding-top: 15px;
+    font-weight: bold;
+}
+
+.content-contact--info a,
+.content-contact--info div > p{
+    font-weight: 100;
+}
+
+.content-contact-form {
+    width: 100%;
+}
+
+.content-contact-form input {
+    min-height: 40px;
+    border: none;
+    background-color: rgb(233, 230, 230);
+    border-radius: 10px;
+    padding: 6px 12px;
+    outline: none;
+}
+
+.content-contact-form div {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.content-contact-form  .form-personal {
+    display: flex;
+}
+
+.form-peronal--item {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.content-contact-form label {
+    padding-bottom: 10px;
+}
+
+.form-peronal--item > input {
+
+}
+
+.form-personal .item-email {
+    margin-left: 15px;
+}
+
+.content-contact-form .contact-form--item {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form--item textarea {
+    border: none;
+    background-color: rgb(233, 230, 230);
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+}
+
+.form-submit {
+    float: right;
+}
+
+.form-submit button {
+    margin-top: 10px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    padding: 18px 28px;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+.form-submit button:hover {
+    background-color: #3ba66b;
+    cursor: pointer;
+}
+
+/* FOOTER */
+#footer { 
+    background-color: #3ba66b;
+    margin-top: 77px;
+}
+
+#drop-of-water1 {
+    width: 100%;
+    height: 47px;
+    overflow: hidden; 
+    position: relative;  
+    top: -47px;
+}
+
+.drop-of-water {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); 
+}
+
+
+#footer .footer-first {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#footer .footer-item {
+    width: 33.33333%;
+    padding: 0px 50px;
+    color: #fff;
+}
+
+.footer-item .signup-des > h3 {
+    padding-bottom: 25px;
+}
+
+.footer-item .signup-des > p {
+    padding-bottom: 20px;
+    line-height: 1.7;
+}
+
+.footer-item .signup-text-btn {
+    display: flex;
+    position: relative;
+    margin: 0px;
+    width: 100%;
+    font-size: 16px;
+}
+
+.signup-text-btn .signup-text input {
+    border-radius: 50px;
+    outline: none;
+    padding: 12px 20px;
+    border: none;
+    padding-right: 150px;
+    width: 100%;
+}
+
+.signup-text-btn .signup-btn:hover {
+    opacity: 0.8;
+}
+
+.signup-text-btn .signup-btn button {
+    border: none;
+    padding: 12px 20px;
+    background-color: #ffb416;
+    border-radius: 0px 50px 50px 0px;
+    color: #f3f2fb;
+    position: absolute;
+    right: 0;
+}
+
+.footer-introduction .introduction {
+    margin-top: 15px;
+    text-align: center;
+    line-height: 1.7;
+}
+
+.footer-last {
+    background-color: rgba(0,0,0,0.1);
+    padding: 15px 0px;
+    color: #fff;
+    font-size: 14px;
+    margin-top: -47px;
+}
+
+.footer-contact {
+    line-height: 1.7;
+    margin-top: -31.575px;
+}
+
+.footer-contact > h3 {
+    padding-bottom: 25px;
+}
+
+.footer-contact div {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-contact p {
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+
+.footer-copyright-iconcontact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-copyright-iconcontact div {
+    width: 33.33333%;
+}
+
+.iconcontact .iconcontact-item {
+    margin: 7px;
+    font-size: large;
+    text-decoration: none;
+    color: #fff;
+}
+
+.iconcontact .icon-ytb {
+    margin-left: -2px;
+}
+
+/* THE END CSS WEB */

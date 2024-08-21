@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shopping Cart</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/cart.css">
+      <link rel="icon" type="image/x-icon" href="./assets/images/loogo.png" />
+  <link rel="stylesheet" href="./assets/themify-icons-font/themify-icons/themify-icons.css" />
+  <link rel="stylesheet" href="./assets/fontawesome-free-6.1.1/fontawesome-free-6.1.1-web/css/all.min.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/modal.css" />
+  <link rel="stylesheet" href="./assets/css/responsive.css" />
+  <script src="https://kit.fontawesome.com/4a90be2ee9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container width_86 width_94">
+          <div class="nav-left">
+            <ul id="nav">
+              <li class="nav-item">
+                <a href="index.html" class="header-nav-home">Home</a>
+              </li>
+  
+              <li class="nav-item nav-product">
+                <div class="nav-product">
+                  <a href="./products.html">Products
+                    <i class="fa-solid fa-caret-down nav-arrow-icon"></i></a>
+                </div>
+                <ul class="subnav" id="categoryList">
+                  <li class="subnav-item"><a href="./subnavvagetable.html" id="category">Headphones</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="./news.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a href="./contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="nav-between-logo">
+            <a href="./index.html">
+              <img src="./assets/img/logo.png" width="200px",height="180px" alt="logo" class="nav-logo" />
+            </a>
+          </div>
+          <div class="nav-right">
+            <ul class="nav-right-list">
+              <li class="list--item">
+                <a href="cart.html" class="navright-item ti-bag js-btn-cartshopping">
+                  <p class="notification js--cartnotification">0</p>
+                </a>
+              </li>
+              <li class="list--item user">
+                <a href="#" class="navright-item ti-user"></a>
+                <div class="signupsignin">
+                  <div class="signupsignin-item signin">
+                    <button class="btn btn-login js-btn-login">Login</button>
+                  </div>
+                  <div class="signupsignin-item signup">
+                    <button class="btn btn-register js-btn-register">
+                      Register
+                    </button>
+                  </div>
+                </div>
+              </li>
+              <li class="list--item">
+                <a href="#" class="navright-item ti-align-right js-btn-sidebar"></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+     
+	<main class="pagee">
+	 	<section class="shopping-cart dark">
+	 		<div class="container">
+		        <div class="block-heading">
+		          <h2>Shopping Cart</h2>
+		          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+		        </div>
+		        <div class="content">
+									 							
+	 				<div class="row"  style="height: auto;">
+	 					<div class="col-md-6 col-lg-7">
+	 						<div class="items">
+				 				<div class="product"  id="cartItemsContainer">
+				 					<div class="row" >
+					 					<div class="col-md-3">
+					 						<img class="img-fluid mx-auto d-block image" src="assets/img/image.jpg">
+					 					</div>
+					 					<div class="col-md-8">
+					 						<div class="info">
+						 						<div class="row" >
+							 						<div class="col-md-5 product-name">
+							 							<div class="product-name">
+								 							<a href="#">Lorem Ipsum dolor</a>
+								 							<div class="product-info">
+									 							<div>Price: <span class="value"></span></div>
+									 						</div>
+									 					</div>
+							 						</div>
+							 						<div class="col-md-4 quantity">
+							 							<label for="quantity">Quantity:</label>
+							 							<input id="quantity" type="number" value ="1" class="form-control quantity-input">
+							 						</div>
+							 						<div class="col-md-3 price">
+							 							<span>$120</span>
+							 						</div>
+							 					</div>
+							 				</div>
+					 					</div>
+					 				</div>
+				 				</div>
+				 			</div>
+			 			</div>
+			 			<div class="col-md-6 col-lg-5">
+							<div class="summary-item">
+								<span class="text">Full Name</span>
+								<span class="price"><input type="text" class="form-control" id="fullName"></span>
+							</div>
+							<div class="summary-item">
+								<span class="text">Phone</span>
+								<span class="price"><input type="number" class="form-control" id="phone"></span>
+							</div>
+							<div class="summary-item">
+								<span class="text">Address</span>
+								<span class="price"><input type="text" class="form-control" id="address"></span>
+							</div>
+							<div class="summary-item">
+								<span class="text">Card Number</span>
+								<span class="price"><input type="number" class="form-control" id="cardNumber"></span>
+							</div>
+							<div class="summary-item">
+								<span class="text">Date</span>
+								<span class="price"><input type="date" class="form-control" id="date"></span>
+							</div>
+							<div class="summary-item">
+								<span class="text">Subtotal</span>
+								<span class="price" id="subtotal">$0.00</span>
+							</div>
+							<div class="summary-item">
+								<span class="text">Total</span>
+								<span class="price" id="total">$0.00</span>
+							</div>
+							<button type="button" id="checkoutButton" class="btn btn-primary btn-lg btn-block">Checkout</button>
+			 			</div>
+		 			</div> 
+		 		</div>
+	 		</div>
+		</section>
+	</main>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cartItemsContainer = document.getElementById('cartItemsContainer');
+        const subtotalElement = document.getElementById('subtotal');
+        const totalElement = document.getElementById('total');
+
+        function renderCartItems() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const products = JSON.parse(localStorage.getItem('myProducts')) || [];
+
+            cartItemsContainer.innerHTML = '';
+
+            let subtotal = 0;
+
+            cart.forEach(cartItem => {
+                const product = products.find(p => String(p.id) === String(cartItem.product_id));
+
+                if (product) {
+                    const totalPrice = (product.price * cartItem.quantity).toFixed(2);
+                    subtotal += parseFloat(totalPrice);
+
+                    const cartItemHTML = `
+                        <div class="row mb-3" data-product-id="${product.id}">
+                            <div class="col-md-3">
+                                <img class="img-fluid mx-auto d-block image" src="${product.image}" alt="${product.name}">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="col-md-5 product-name">
+                                            <a href="#">${product.name}</a>
+                                            <div class="product-info">
+                                                <div>Price: <span class="value">$${product.price}</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 quantity">
+                                            <label for="quantity-${product.id}">Quantity:</label>
+                                            <input id="quantity-${product.id}" type="number" value="${cartItem.quantity}" class="form-control quantity-input" data-product-id="${product.id}">
+                                        </div>
+                                        <div class="col-md-3 price">
+                                            <span class="item-total">$${totalPrice}</span>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <button class="btn btn-danger btn-sm delete-item" data-product-id="${product.id}">Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`;
+
+                    cartItemsContainer.insertAdjacentHTML('beforeend', cartItemHTML);
+                }
+            });
+
+            // Update total display
+            if (subtotalElement) {
+                subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+                if (totalElement) {
+                    totalElement.textContent = `$${subtotal.toFixed(2)}`;
+                }
+            }
+        }
+
+        function populateCategoryList() {
+            const categoryList = document.getElementById('categoryList');
+            if (categoryList) {
+                // Retrieve categories from local storage
+                const categories = JSON.parse(localStorage.getItem('categories')) || [];
+                
+                // Clear the current list
+                categoryList.innerHTML = ''; 
+                
+                // Loop through the categories and create list items
+                categories.forEach(category => {
+                    const categoryItem = document.createElement('li');
+                    categoryItem.className = 'subnav-item';
+                    
+                    const categoryLink = document.createElement('a');
+                    categoryLink.href = `./productsOfCategory.html?id=${category.id}`; 
+                    categoryLink.textContent = category.name; 
+                    
+                    categoryItem.appendChild(categoryLink);
+                    categoryList.appendChild(categoryItem);
+                });
+            }
+        }
+
+        renderCartItems();
+        populateCategoryList(); // Call the function to populate category list
+
+        // Update price when quantity changes
+        cartItemsContainer.addEventListener('input', function(event) {
+            if (event.target.classList.contains('quantity-input')) {
+                const input = event.target;
+                const productId = input.dataset.productId;
+                const quantity = parseInt(input.value, 10);
+
+                const products = JSON.parse(localStorage.getItem('myProducts')) || [];
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                const product = products.find(p => String(p.id) === String(productId));
+
+                if (product) {
+                    const itemTotal = (product.price * quantity).toFixed(2);
+                    const itemTotalElement = input.closest('.row').querySelector('.item-total');
+                    
+                    if (itemTotalElement) {
+                        itemTotalElement.textContent = `$${itemTotal}`;
+                    }
+
+                    // Update the cart in local storage
+                    const cartItem = cart.find(item => String(item.product_id) === String(productId));
+                    if (cartItem) {
+                        cartItem.quantity = quantity;
+                    }
+
+                    localStorage.setItem('cart', JSON.stringify(cart));
+
+                    // calculate subtotal
+                    let newSubtotal = 0;
+                    cart.forEach(item => {
+                        const prod = products.find(p => String(p.id) === String(item.product_id));
+                        if (prod) {
+                            newSubtotal += parseFloat((prod.price * item.quantity).toFixed(2));
+                        }
+                    });
+
+                    if (subtotalElement) {
+                        subtotalElement.textContent = `$${newSubtotal.toFixed(2)}`;
+                        if (totalElement) {
+                            totalElement.textContent = `$${newSubtotal.toFixed(2)}`;
+                        }
+                    }
+                }
+            }
+            
+        });
+
+        // Handle delete button click
+        cartItemsContainer.addEventListener('click', function(event) {
+            if (event.target.classList.contains('delete-item')) {
+                const productId = event.target.dataset.productId;
+
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const updatedCart = cart.filter(item => String(item.product_id) !== String(productId));
+                localStorage.setItem('cart', JSON.stringify(updatedCart));
+
+                renderCartItems();
+            }
+        });
+
+        
+
+        const checkoutButton = document.getElementById('checkoutButton');
+        if (checkoutButton) {
+            checkoutButton.addEventListener('click', function() {
+                const fullName = document.getElementById('fullName').value;
+                const phone = document.getElementById('phone').value;
+                const address = document.getElementById('address').value;
+                const cardNumber = document.getElementById('cardNumber').value;
+                const date = document.getElementById('date').value;
+                const subtotal = parseFloat(subtotalElement.textContent.replace('$', ''));
+                const total = parseFloat(totalElement.textContent.replace('$', ''));
+
+                const login = JSON.parse(localStorage.getItem('login')) || {};
+                const email = login.email || 'N/A';
+
+                const order = {
+                    fullName,
+                    phone,
+                    address,
+                    cardNumber,
+                    date,
+                    subtotal,
+                    total,
+                    email
+                };
+
+                localStorage.setItem('order', JSON.stringify(order));
+
+                alert('Order has been saved to local storage!');
+            });
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,586 @@
+/* MODAL */
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    z-index: 100;
+    display: none;
+}
+
+.open {
+    display: flex;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.modal__registerlogin {
+    z-index: 2;
+    background: #3ba66b;
+    margin: auto;
+    width: 500px;
+    height: max-content;
+    border-radius: 10px;
+    overflow: hidden;
+    animation: modalAnimations ease 0.5s;
+    box-shadow: 0px 25px 45px rgb(0 0 0 / 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+@keyframes modalAnimations {
+    from {
+        transform: translateY(-150px);
+    } 
+    to {
+        transform: translateY(0);
+    }
+}
+
+.inner__authform--header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    color: white;
+}
+
+.inner__authform--header img {
+    margin-bottom: 10px;
+}
+
+.inner__authform--body {
+    padding: 0 30px;
+}
+
+.inner__authform--title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.authform__fromhome {
+    display: flex;
+    font-size: 15px;
+}
+
+.authform__fromhome span {
+    margin: 0 10px;
+}
+
+.authform__fromhome a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.authform__item {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0;
+}
+
+.authform__item input {
+    padding: 12px 20px;
+    border-radius: 25px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: none;
+    box-shadow: 0px 5px 15px rgb(0 0 0 / 5%);
+    letter-spacing: 1px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.authform__item input::placeholder {
+    font-size: 16px;
+    color: #fff;
+}
+
+.termsandpolicy {
+    text-align: center;
+    margin: 20px 0 60px;
+}
+
+.termsandpolicy a {
+    text-decoration: none;
+    color: #2e8053;
+}
+
+.authform__help {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 20px;
+}
+
+.authform__help > button {
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    background-color: #FFC107;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.authform__help--register {
+    width: 100%;
+}
+
+.authform__separate {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.authform__separate span {
+    padding: 5px 10px;
+    background-color: #fff;
+    z-index: 2;
+    border-radius: 20px;
+    color: #3ba66b;
+}
+
+.authform__separate::before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: #ccc;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+}
+
+.inner__authform--des {
+    padding: 10px;
+    border-radius: 5px;
+    border: 0.5px #fff solid;
+    text-align: center;
+}
+
+.authform__help--forgot {
+    color: #fff;
+    text-decoration: none;
+}
+
+.inner__authform--controls {
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px 20px 30px;
+}
+
+.inner__authform--controls > button {
+    padding: 12px 20px;
+    background-color: rgba(230, 230, 230, 0.5);
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 16px;
+    border: none;
+}
+
+.inner__authform--controls > button:first-child {
+    margin-bottom: 10px;
+}
+
+.inner__authform--socials {
+    display: flex;
+    justify-content: center;
+}
+
+.modal__register .inner__authform--socials {
+    margin-bottom: 20px;
+}
+
+.inner__authform--socials a {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.authform--socials-item {
+    border-radius: 5px;
+}
+
+.authform--socialsFb {
+    background-color: #217efc;
+    margin-right: 100px;
+    display: flex;
+    padding: 10px;
+}
+
+.authform--socialsFb i {
+    font-size: x-large;
+    margin-right: 10px;
+}
+
+.authform--socialsGg {
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.authform--socialsFb a {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.authform--socialsGg a  {
+    color: rgb(84, 83, 83);
+}
+
+/* MODAL CART SHOPPING */
+.modal__cartshopping {
+    background-color: white;
+    z-index: 2;
+    width: 335px;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    animation: modalCartAnimations ease 0.5s;
+}
+
+@keyframes modalCartAnimations {
+    from {
+        transform: translateX(70%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.modal__cartshpping--inner {
+    padding: 10px 15px;
+    width: 100%;
+    position: relative;
+}
+
+.modal__cartshopping--header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.cartshopping--icon {
+    font-weight: 600;
+    border: none;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.cartshopping--icon:hover {
+    transform: rotate(360deg);
+}
+
+.modal__cartshopping--noproduct {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 0 0 ;
+}
+
+.modal__cartshopping--noproduct.hidden{
+    display: none;
+}
+
+.modal__cartshopping--noproduct img{
+    height: 200px;
+    width: 200px;
+}
+/* There are products in the cart */
+.modal__cartshopping--content {
+    display: flex;
+    margin-top: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.imgproduct--img {
+    width: 113px;
+    height: 113px;
+    /* border: 1px solid #ccc; */
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.infoproduct div {
+    margin-bottom: 6px;
+}
+
+.infoproduct--name {
+    display: block;
+}
+
+.infoproduct--separate {
+    margin: 0 5px;
+}
+
+.infoproduct_boxweight {
+    display: flex;
+}
+
+.infoproduct__button {
+    display: flex;
+    align-items: center;
+}
+
+.infoproduct__button label {
+    margin-right: 7px;
+}
+
+.infoproduct__button button {
+    width: 25px;
+    height: 26px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.infoproduct__button .quantity {
+    border: 1px solid #ccc;
+    padding: 6px 0 3px 0;
+    width: 25px;
+    text-align: center;
+    outline: none;
+}
+
+.infoproduct__priceproduct {
+    display: flex;
+}
+
+.priceproduct--labelprice {
+    margin-right: 5px;
+}
+
+.infoproduct__btnromove {
+    width: 145px;
+    border: none;
+    padding: 5px 0 4px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #3ba66b;
+    color: #fff;
+}
+
+.infoproduct__btnromove:hover {
+    background-color: #FFC107;
+}
+
+.container__cartitem {
+    height: calc(100% - 145px);
+    overflow-y: auto;
+}
+
+.container__cartitem::-webkit-scrollbar {
+    width: 5px;
+    background-color: rgb(211, 211, 211);
+    border-radius: 5px;
+}
+
+.summoney {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    padding: 0 20px;
+    opacity: 0;
+}
+
+.show {
+    opacity: 1;
+}
+
+.summoney--separate {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #ccc;
+}
+
+.summoney-labelandsum {
+    display: flex;
+}
+
+.summoney--intomoneyandunitprice {
+    display: flex;
+    margin: 0 auto;
+}
+
+.summoney__currency {
+    display: flex;
+}
+
+.summoney--unitprice {
+    color: red;
+    text-decoration: underline;
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+.summoney--labelsum {
+    margin-right: 5px;
+}
+
+.summoney--item {
+    margin-bottom: 15px;
+}
+
+.summoney--payment {
+    width: 100%;
+    padding: 8px 0 7px 0;
+    border-radius: 5px;
+    border: none;
+    background: #3ba66b;
+    color: white  ;
+}
+
+.summoney--payment:hover {
+    cursor: pointer;
+    background-color: #FFC107;
+}
+
+/* The end add products */
+
+.btn--continueshopping {
+    bottom: 0;
+    padding: 12px 30px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3ba66b;
+    font-size: 16px;
+    color: white;
+}
+
+.btn--continueshopping:hover {
+    background-color: #2e8053;
+    cursor: pointer;
+}
+/* MODAL SIDEBAR */
+.modal__sidebar {
+    position: absolute;
+    z-index: 10;
+    background-color: #fff;
+    width: 60%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 16px 0 0 32px;
+    animation: modalSidebarAni ease 0.4s ;
+}
+
+@keyframes modalSidebarAni {
+    from {
+        transform: translateX(-70%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+.sidebar__login {
+    border-bottom: 1px solid rgb(215, 215, 215);
+}
+
+.sidebar__login-inner {
+    margin-bottom: 12px;
+    list-style: none;
+    border-radius: 10px 0 0 10px;
+}
+
+.sidebar__login-inner i {
+    margin-right: 16px;
+    color: #757575;
+}
+
+.sidebar--btn-login {
+    color: #333;
+    display: block;
+    padding: 20px 0 20px 20px; 
+}
+
+.modal__sidebar--list {
+    margin: 12px 0;
+}
+
+.modal__sidebar--item {
+    list-style: none;
+    border-radius: 10px 0 0 10px;
+}
+
+.modal__sidebar--item a i {
+    width: 18px;
+    margin-right: 16px;
+    color: #757575;
+}
+
+.modal__sidebar--item a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    width: 100%;
+    padding: 20px 0 20px 20px;
+}
+
+.sidebar__login-inner:hover,
+.modal__sidebar--item:hover {
+    background: #f0f0f0;
+}
+/* LOGIN WITH GG-CSS */
+.abcRioButtonLightBlue {
+    height: 44px !important;
+    width: 100% !important;   
+}
+
+.abcRioButtonContentWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.abcRioButton:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+.abcRioButtonContents {
+    font-size: 16px !important;
+    width: 67%;
+    padding-right: 4px;
+}
+
+.abcRioButtonSvgImageWithFallback.abcRioButtonIconImage {
+    height: 24px !important;
+    width: 24px !important;
+}
+
+.abcRioButtonSvg {
+    height: 24px;
+    width: 24px;
+}
+/* THE END CSS MODAL */

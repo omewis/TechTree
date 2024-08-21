@@ -1,0 +1,28 @@
+                    <div class="content-details--item content-details--imgguava js--imgproduct">
+                            <img src="${product.image}" alt="${product.name}" class="imgproduct">
+                            <i class="ti-heart"></i>
+                        </div>
+                        <div class="content-details--item content-details--info">
+                            <h3 class="info-name js-nameproduct" id="${product.id}">${product.name}</h3>
+                            <div class="info-priceandrprice">
+                                <p class="info-price js--price">${product.price}<span>LE</span></p>
+                            </div>
+                            <p class="info-economize">${product.name} </p>
+                            <p class="info-des">${product.description}</p>                
+                            <div class="content-details--amount">
+                                <p>Quantity:</p>
+                                <div class="incr-and-decr">
+                                    <div class="quantityadapter">
+                                        <button class="quantityadapter-item minus js--minus">
+                                            <i class="ti-minus"></i>
+                                        </button>
+                                        <input type="text" name="" id="" value="1" class="enterquantity js--enterquantity">
+                                        <button class="quantityadapter-item plus js--plus">
+                                            <i class="ti-plus"></i>
+                                        </button>
+                                    </div>
+                                    <button class="buynow js--buynow">BUY NOW</button>
+                                </div>
+                            </div>
+                            <button class="content-details--add js--btnaddproduct">ADD TO CART</button>
+                        </div>`;
