@@ -43,7 +43,7 @@
           </div>
           <div class="nav-between-logo">
             <a href="./index.html">
-              <img src="./assets/img/logo.png" width="200px",height="180px" alt="logo" class="nav-logo" />
+              <img src="./assets/img/logo.png" width="140px",height="140px" alt="logo" class="nav-logo" />
             </a>
           </div>
           <div class="nav-right">
@@ -73,15 +73,12 @@
           </div>
         </div>
       </div>
+      
      
 	<main class="pagee">
 	 	<section class="shopping-cart dark">
 	 		<div class="container">
-		        <div class="block-heading">
-		          <h2>Shopping Cart</h2>
-		          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
-		        </div>
-		        <div class="content">
+		        
 									 							
 	 				<div class="row"  style="height: auto;">
 	 					<div class="col-md-6 col-lg-7">
@@ -157,26 +154,26 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const cartItemsContainer = document.getElementById('cartItemsContainer');
-        const subtotalElement = document.getElementById('subtotal');
-        const totalElement = document.getElementById('total');
+        var cartItemsContainer = document.getElementById('cartItemsContainer');
+        var subtotalElement = document.getElementById('subtotal');
+        var totalElement = document.getElementById('total');
 
         function renderCartItems() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const products = JSON.parse(localStorage.getItem('myProducts')) || [];
+            var cart = JSON.parse(localStorage.getItem('cart')) || [];
+            var products = JSON.parse(localStorage.getItem('myProducts')) || [];
 
             cartItemsContainer.innerHTML = '';
 
             let subtotal = 0;
 
             cart.forEach(cartItem => {
-                const product = products.find(p => String(p.id) === String(cartItem.product_id));
+                var product = products.find(p => String(p.id) === String(cartItem.product_id));
 
                 if (product) {
-                    const totalPrice = (product.price * cartItem.quantity).toFixed(2);
+                    var totalPrice = (product.price * cartItem.quantity).toFixed(2);
                     subtotal += parseFloat(totalPrice);
 
-                    const cartItemHTML = `
+                    var cartItemHTML = `
                         <div class="row mb-3" data-product-id="${product.id}">
                             <div class="col-md-3">
                                 <img class="img-fluid mx-auto d-block image" src="${product.image}" alt="${product.name}">
@@ -219,20 +216,20 @@
         }
 
         function populateCategoryList() {
-            const categoryList = document.getElementById('categoryList');
+            var categoryList = document.getElementById('categoryList');
             if (categoryList) {
                 // Retrieve categories from local storage
-                const categories = JSON.parse(localStorage.getItem('categories')) || [];
+                var categories = JSON.parse(localStorage.getItem('categories')) || [];
                 
                 // Clear the current list
                 categoryList.innerHTML = ''; 
                 
                 // Loop through the categories and create list items
                 categories.forEach(category => {
-                    const categoryItem = document.createElement('li');
+                    var categoryItem = document.createElement('li');
                     categoryItem.className = 'subnav-item';
                     
-                    const categoryLink = document.createElement('a');
+                    var categoryLink = document.createElement('a');
                     categoryLink.href = `./productsOfCategory.html?id=${category.id}`; 
                     categoryLink.textContent = category.name; 
                     
@@ -248,25 +245,25 @@
         // Update price when quantity changes
         cartItemsContainer.addEventListener('input', function(event) {
             if (event.target.classList.contains('quantity-input')) {
-                const input = event.target;
-                const productId = input.dataset.productId;
-                const quantity = parseInt(input.value, 10);
+                var input = event.target;
+                var productId = input.dataset.productId;
+                var quantity = parseInt(input.value, 10);
 
-                const products = JSON.parse(localStorage.getItem('myProducts')) || [];
-                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                var products = JSON.parse(localStorage.getItem('myProducts')) || [];
+                var cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-                const product = products.find(p => String(p.id) === String(productId));
+                var product = products.find(p => String(p.id) === String(productId));
 
                 if (product) {
-                    const itemTotal = (product.price * quantity).toFixed(2);
-                    const itemTotalElement = input.closest('.row').querySelector('.item-total');
+                    var itemTotal = (product.price * quantity).toFixed(2);
+                    var itemTotalElement = input.closest('.row').querySelector('.item-total');
                     
                     if (itemTotalElement) {
                         itemTotalElement.textContent = `$${itemTotal}`;
                     }
 
                     // Update the cart in local storage
-                    const cartItem = cart.find(item => String(item.product_id) === String(productId));
+                    var cartItem = cart.find(item => String(item.product_id) === String(productId));
                     if (cartItem) {
                         cartItem.quantity = quantity;
                     }
@@ -276,7 +273,7 @@
                     // calculate subtotal
                     let newSubtotal = 0;
                     cart.forEach(item => {
-                        const prod = products.find(p => String(p.id) === String(item.product_id));
+                        var prod = products.find(p => String(p.id) === String(item.product_id));
                         if (prod) {
                             newSubtotal += parseFloat((prod.price * item.quantity).toFixed(2));
                         }
@@ -296,10 +293,10 @@
         // Handle delete button click
         cartItemsContainer.addEventListener('click', function(event) {
             if (event.target.classList.contains('delete-item')) {
-                const productId = event.target.dataset.productId;
+                var productId = event.target.dataset.productId;
 
-                const cart = JSON.parse(localStorage.getItem('cart')) || [];
-                const updatedCart = cart.filter(item => String(item.product_id) !== String(productId));
+                var cart = JSON.parse(localStorage.getItem('cart')) || [];
+                var updatedCart = cart.filter(item => String(item.product_id) !== String(productId));
                 localStorage.setItem('cart', JSON.stringify(updatedCart));
 
                 renderCartItems();
@@ -308,21 +305,21 @@
 
         
 
-        const checkoutButton = document.getElementById('checkoutButton');
+        var checkoutButton = document.getElementById('checkoutButton');
         if (checkoutButton) {
             checkoutButton.addEventListener('click', function() {
-                const fullName = document.getElementById('fullName').value;
-                const phone = document.getElementById('phone').value;
-                const address = document.getElementById('address').value;
-                const cardNumber = document.getElementById('cardNumber').value;
-                const date = document.getElementById('date').value;
-                const subtotal = parseFloat(subtotalElement.textContent.replace('$', ''));
-                const total = parseFloat(totalElement.textContent.replace('$', ''));
+                var fullName = document.getElementById('fullName').value;
+                var phone = document.getElementById('phone').value;
+                var address = document.getElementById('address').value;
+                var cardNumber = document.getElementById('cardNumber').value;
+                var date = document.getElementById('date').value;
+                var subtotal = parseFloat(subtotalElement.textContent.replace('$', ''));
+                var total = parseFloat(totalElement.textContent.replace('$', ''));
 
-                const login = JSON.parse(localStorage.getItem('login')) || {};
-                const email = login.email || 'N/A';
+                var login = JSON.parse(localStorage.getItem('login')) || {};
+                var email = login.email || 'N/A';
 
-                const order = {
+                var order = {
                     fullName,
                     phone,
                     address,

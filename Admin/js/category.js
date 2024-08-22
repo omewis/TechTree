@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let categoriesContainer = [];
     let currentCategoryIndex = null;  // track the index we want to update
 
-    const regex = {
+    var regex = {
         id: /^\d+$/, // Number only
         name: /^[A-Za-z\s]{2,50}$/ // Letters and spaces, 2-50 characters
     };

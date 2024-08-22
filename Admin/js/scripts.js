@@ -1,5 +1,5 @@
 // Regular expressions for validation
-const regex = {
+var regex = {
     //id: /^\d+$/, // number
     name: /^[A-Za-z\s]{2,50}$/, //  2-50 letters 
     price: /^\d+(\.\d{1,2})?$/, //  positive number with up to 2 decimal places
@@ -157,7 +157,7 @@ function displayProducts(productList) {
 
 // Function to delete a product
 function deleteProduct(event) {
-    let index = event.target.getAttribute('data-index');
+    let index = event.target.getAttribute('data-index'); //identify the position of the product in the container
     productsContainer.splice(index, 1);
     localStorage.setItem('myProducts', JSON.stringify(productsContainer));
     displayProducts(productsContainer);
@@ -275,9 +275,9 @@ function validateProduct(product) {
     }
 
     // Validate Product Category
-    if (!regex.category.test(product.category)) {
-        errors.category = 'Product Category must contain only letters and spaces.';
-    }
+    // if (!regex.category.test(product.category)) {
+    //     errors.category = 'Product Category must contain only letters and spaces.';
+    // }
 
     // Validate Product Description
     if (!regex.description.test(product.description)) {

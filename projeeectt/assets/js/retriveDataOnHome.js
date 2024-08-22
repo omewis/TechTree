@@ -2,7 +2,7 @@
 let productsContainer = JSON.parse(localStorage.getItem('myProducts')) || [];
 
 function displayProducts() {
-    const container = document.getElementById('productsContainer');
+    var container = document.getElementById('productsContainer');
     container.innerHTML = ''; 
 
 

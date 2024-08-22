@@ -147,14 +147,14 @@ document.querySelectorAll('.sidebar-content-list input[type="checkbox"]').forEac
 
 // Function to get the category ID from the URL
 function getCategoryIdFromUrl() {
-    const urlParams = new URLSearchParams(window.location.search);
+    var urlParams = new URLSearchParams(window.location.search);
     return urlParams.get('id'); // Returns the category ID as a string
 }
 
 // Function to filter products based on selected price ranges and category
 function filterProducts() {
-    const selectedRanges = [];
-    const categoryId = getCategoryIdFromUrl(); // Get category ID from the URL
+    var selectedRanges = [];
+    var categoryId = getCategoryIdFromUrl(); // Get category ID from the URL
 
     // Get all selected checkboxes for price ranges
     document.querySelectorAll('.sidebar-content-list input[type="checkbox"]:checked').forEach(checkbox => {
@@ -162,13 +162,13 @@ function filterProducts() {
     });
 
     // Filter products based on selected price ranges and category
-    const filteredProducts = productsContainer.filter(product => {
+    var filteredProducts = productsContainer.filter(product => {
         // Check if the product's category matches the selected category ID
-        const isInCategory = !categoryId || product.category === categoryId;
+        var isInCategory = !categoryId || product.category === categoryId;
 
         // Check if the product's price is within any of the selected price ranges
-        const isInPriceRange = selectedRanges.length === 0 || selectedRanges.some(range => {
-            const [_, min, max] = range.split('-').map(Number); // Split the range and convert to numbers
+        var isInPriceRange = selectedRanges.length === 0 || selectedRanges.some(range => {
+            var [_, min, max] = range.split('-').map(Number); // Split the range and convert to numbers
             return product.price >= min && product.price <= max;
         });
 
@@ -180,7 +180,7 @@ function filterProducts() {
 
 // Function to display filtered products
 function displayFilteredProducts(products) {
-    const containerTwo = document.getElementById('productsContainerTwo');
+    var containerTwo = document.getElementById('productsContainerTwo');
     containerTwo.innerHTML = '';
 
     products.forEach(product => {

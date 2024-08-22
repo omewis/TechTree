@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function displayUsers() {
         let users = JSON.parse(localStorage.getItem('users')) || [];
         
-        const userTableBody = document.getElementById('userTableBody');
+        var userTableBody = document.getElementById('userTableBody');
         
         userTableBody.innerHTML = '';
         if (users.length === 0) {
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         users.forEach(user => {
-            const row = document.createElement('tr');
+            var row = document.createElement('tr');
 
             row.innerHTML = `
                 <td>${user.id}</td>

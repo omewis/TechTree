@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Handle login form submission
     document.getElementById('loginForm').addEventListener('submit', function(event) {
         event.preventDefault();
-        const email = document.getElementById('loginEmail').value;
-        const password = document.getElementById('loginPassword').value;
+        var email = document.getElementById('loginEmail').value;
+        var password = document.getElementById('loginPassword').value;
         
         console.log('Login form submitted');
         console.log('Email:', email);
@@ -26,11 +26,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // Handle registration form submission
     document.getElementById('registerForm').addEventListener('submit', function(event) {
         event.preventDefault();
-        const email = document.getElementById('registerEmail').value;
-        const password = document.getElementById('registerPassword').value;
-        const role = document.getElementById('registerRole').value;
-        const phone = document.getElementById('registerPhone').value;
-        const location = document.getElementById('registerLocation').value;
+        var email = document.getElementById('registerEmail').value;
+        var password = document.getElementById('registerPassword').value;
+        var role = document.getElementById('registerRole').value;
+        var phone = document.getElementById('registerPhone').value;
+        var location = document.getElementById('registerLocation').value;
 
         console.log('Registration form submitted');
         console.log('Email:', email);

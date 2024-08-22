@@ -1,21 +1,21 @@
 //------------------- Js for register and login -------------------//
 
 // variable button
-const btnLogin = document.querySelector('.js-btn-login');
-const btnRegister = document.querySelector('.js-btn-register');
-const btnRegisterFooter = document.querySelectorAll('.js-btn-registerfooter');
-const btnsCancel = document.querySelectorAll('.js-btn-cancel');
-const btnCart = document.querySelector('.js-btn-cartshopping');
-const btnSiderBar = document.querySelector('.js-btn-sidebar');
-const btnClose = document.querySelector('.js-btn-close');
-const btnLoginRps = document.querySelector('.js-btn-loginRps');
+var btnLogin = document.querySelector('.js-btn-login');
+var btnRegister = document.querySelector('.js-btn-register');
+var btnRegisterFooter = document.querySelectorAll('.js-btn-registerfooter');
+var btnsCancel = document.querySelectorAll('.js-btn-cancel');
+var btnCart = document.querySelector('.js-btn-cartshopping');
+var btnSiderBar = document.querySelector('.js-btn-sidebar');
+var btnClose = document.querySelector('.js-btn-close');
+var btnLoginRps = document.querySelector('.js-btn-loginRps');
 // variable div
-const modal = document.querySelector('.js-modal');
-const modalRegister = document.querySelector('.js-modal__register');
-const modalLogin = document.querySelector('.js-modal__login');
-const modalCartshopping = document.querySelector('.js-modal__cartshopping');
-const modalRegisterLogin = document.querySelector('.js-modal__registerlogin');
-const modalSiderBar = document.querySelector('.js-modal__sidebar');
+var modal = document.querySelector('.js-modal');
+var modalRegister = document.querySelector('.js-modal__register');
+var modalLogin = document.querySelector('.js-modal__login');
+var modalCartshopping = document.querySelector('.js-modal__cartshopping');
+var modalRegisterLogin = document.querySelector('.js-modal__registerlogin');
+var modalSiderBar = document.querySelector('.js-modal__sidebar');
 
 function showModalLogin() {
     modal.classList.add('open');
@@ -65,7 +65,7 @@ btnLoginRps.addEventListener('click', function(){
     showModalLogin();
 });
 
-for (const btnCancel of btnsCancel) {
+for (var btnCancel of btnsCancel) {
     btnCancel.addEventListener('click', hiddenModal);
 }
 
@@ -107,7 +107,7 @@ function signOut() {
     });
 }
 
-const btnPayment = document.querySelectorAll('.js__summoney--payment');
+var btnPayment = document.querySelectorAll('.js__summoney--payment');
 
 btnPayment.forEach(function (btn) {
     btn.addEventListener('click', function () {
@@ -115,15 +115,15 @@ btnPayment.forEach(function (btn) {
     })
 })
 
-const btnInfoProduct = document.querySelector('.js--infoproduct');
-const btnReturnPolicy = document.querySelector('.js--returnpolicy');
-const btnStorageInstructions = document.querySelector('.js--storageinstructions');
-const containDesProduct = document.querySelector('.des-product');
-const containDesReturngoods = document.querySelector('.des-returngoods-maintain');
-const containStorageInstructions = document.querySelector('.des-storageinstructions');
-const infoDescriptions = document.querySelector('.js--infodes');
+var btnInfoProduct = document.querySelector('.js--infoproduct');
+var btnReturnPolicy = document.querySelector('.js--returnpolicy');
+var btnStorageInstructions = document.querySelector('.js--storageinstructions');
+var containDesProduct = document.querySelector('.des-product');
+var containDesReturngoods = document.querySelector('.des-returngoods-maintain');
+var containStorageInstructions = document.querySelector('.des-storageinstructions');
+var infoDescriptions = document.querySelector('.js--infodes');
 
-const btnBuyNow = document.querySelectorAll('.js--buynow');
+var btnBuyNow = document.querySelectorAll('.js--buynow');
 
 btnBuyNow.forEach(function(btn) {
     btn.addEventListener('click', () => {

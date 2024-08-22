@@ -479,7 +479,7 @@ html {
 }
 
 .sectiontwo-item .item-loveandsetting button:last-child {
-    background-color: #3ba66b;
+    background-color: #edeeed;
 }
 
 .sectiontwo-item .item-loveandsetting button:hover {
@@ -613,7 +613,11 @@ html {
 
 .sectionfour-about {
     display: flex;
-    width: 74.425%;
+    flex-wrap: wrap;
+    gap: 10px; /* Adjust the gap between products as needed */
+    flex: 1 1 calc(20% - 20px); /* 20% width for 5 items per row, minus the gap */
+    box-sizing: border-box;
+    width: 70.425%;
     justify-content: space-between;
 }
 

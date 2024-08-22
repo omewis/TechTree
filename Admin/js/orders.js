@@ -1,23 +1,23 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const orderTableBody = document.getElementById('orderTableBody');
-    const order = JSON.parse(localStorage.getItem('order')) || {};
+    var orderTableBody = document.getElementById('orderTableBody');
+    var order = JSON.parse(localStorage.getItem('order')) || {};
 
     if (order) {
-        const row = document.createElement('tr');
+        var row = document.createElement('tr');
         
-        const cells = [
+        var cells = [
             order.fullName,
             order.phone || 'N/A',
             order.address || 'N/A',
             order.cardNumber || 'N/A',
             order.date || 'N/A',
-            `$${(order.subtotal || 0).toFixed(2)}`,
+    
             `$${(order.total || 0).toFixed(2)}`,
             order.email || 'N/A'
         ];
 
         cells.forEach(cellValue => {
-            const cell = document.createElement('td');
+            var cell = document.createElement('td');
             cell.textContent = cellValue;
             row.appendChild(cell);
         });

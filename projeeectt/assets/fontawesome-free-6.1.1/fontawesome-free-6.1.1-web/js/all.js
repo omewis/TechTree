@@ -80,7 +80,7 @@
     if (!o) return;
     if (typeof o === "string") return _arrayLikeToArray(o, minLen);
     var n = Object.prototype.toString.call(o).slice(8, -1);
-    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Object" && o.varructor) n = o.varructor.name;
     if (n === "Map" || n === "Set") return Array.from(o);
     if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
   }
@@ -736,7 +736,7 @@
     if (!o) return;
     if (typeof o === "string") return _arrayLikeToArray(o, minLen);
     var n = Object.prototype.toString.call(o).slice(8, -1);
-    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Object" && o.varructor) n = o.varructor.name;
     if (n === "Map" || n === "Set") return Array.from(o);
     if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
   }
@@ -1092,7 +1092,7 @@
     if (!o) return;
     if (typeof o === "string") return _arrayLikeToArray(o, minLen);
     var n = Object.prototype.toString.call(o).slice(8, -1);
-    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Object" && o.varructor) n = o.varructor.name;
     if (n === "Map" || n === "Set") return Array.from(o);
     if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
   }
@@ -2629,7 +2629,7 @@
     return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
       return typeof obj;
     } : function (obj) {
-      return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+      return obj && "function" == typeof Symbol && obj.varructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
     }, _typeof(obj);
   }
 
@@ -2681,8 +2681,8 @@
     }, _wrapRegExp.apply(this, arguments);
   }
 
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
+  function _classCallCheck(instance, varructor) {
+    if (!(instance instanceof varructor)) {
       throw new TypeError("Cannot call a class as a function");
     }
   }
@@ -2697,13 +2697,13 @@
     }
   }
 
-  function _createClass(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties(Constructor, staticProps);
-    Object.defineProperty(Constructor, "prototype", {
+  function _createClass(varructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(varructor.prototype, protoProps);
+    if (staticProps) _defineProperties(varructor, staticProps);
+    Object.defineProperty(varructor, "prototype", {
       writable: false
     });
-    return Constructor;
+    return varructor;
   }
 
   function _defineProperty(obj, key, value) {
@@ -2727,7 +2727,7 @@
     }
 
     subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
+      varructor: {
         value: subClass,
         writable: true,
         configurable: true
@@ -2802,7 +2802,7 @@
     if (!o) return;
     if (typeof o === "string") return _arrayLikeToArray(o, minLen);
     var n = Object.prototype.toString.call(o).slice(8, -1);
-    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Object" && o.varructor) n = o.varructor.name;
     if (n === "Map" || n === "Set") return Array.from(o);
     if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
   }

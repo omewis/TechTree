@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         products.forEach(product => {
             containerTwo.innerHTML += `
-                <div class="col-md-4 col-sm-6 mb-4 section-item" data-price="${product.price}" id="${product.category}">
+                <div class="col-md-5.5 col-sm-6 mb-4 section-item" data-price="${product.price}" id="${product.category}">
                     <div class="sectiontwo-item">
                         <div class="item-sp item-sp--img">
                             <a href="./guava.html?id=${product.id}">
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             </a>
                         </div>
                         <div class="item-sp item-price">
-                            <a href="guava.html?id=${product.id}" class="item-sp--name">${product.name}</a>
+                            
                             <a href="./guava.html?id=${product.id}" class="item-sp--name">${product.name}</a>
                             <div class="item-sp-price">
                                 <p class="item-sp--cost">${product.price}<a>$</a></p>
